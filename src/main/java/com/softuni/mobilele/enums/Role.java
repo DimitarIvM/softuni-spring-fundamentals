@@ -2,7 +2,7 @@ package com.softuni.mobilele.enums;
 
 public enum Role {
 
-ADMIN,
+    ADMIN,
     USER;
 
 }

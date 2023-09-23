@@ -1,38 +1,21 @@
-package com.softuni.mobilele.model.entity;
+package com.softuni.mobilele.model.entity.dto;
 
-import com.softuni.mobilele.enums.Role;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "users")
-public class User extends BaseEntity {
+public class UserRegistrationDTO {
 
-    @Column
     private String username;
-    @Column
+
     private String password;
-    @Column(name = "first_name")
+
     private String firstName;
-    @Column(name = "last_name")
+
     private String lastName;
-    @Column(name = "is_active")
+
     private Boolean isActive;
 
-    @Column(name = "image_url")
-    private String imageUrl;
-    @Column
     private LocalDateTime created;
-    @Column
-    private LocalDateTime modified;
-
-    @OneToOne
-    private UserRole role;
-
 
     public String getUsername() {
         return username;
@@ -74,35 +57,11 @@ public class User extends BaseEntity {
         isActive = active;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
     public LocalDateTime getCreated() {
         return created;
     }
 
     public void setCreated(LocalDateTime created) {
         this.created = created;
-    }
-
-    public LocalDateTime getModified() {
-        return modified;
-    }
-
-    public void setModified(LocalDateTime modified) {
-        this.modified = modified;
-    }
-
-    public UserRole getRole() {
-        return role;
-    }
-
-    public void setRole(UserRole role) {
-        this.role = role;
     }
 }
