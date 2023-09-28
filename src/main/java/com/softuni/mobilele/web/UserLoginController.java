@@ -24,9 +24,19 @@ public class UserLoginController {
     }
 
     @PostMapping("/login")
-    public String loginUser(UserLoginDTO userLoginDTO) {
+    public String login(UserLoginDTO userLoginDTO) {
+        boolean loginSuccessful = userService.loginUser(userLoginDTO);
 
+       if (loginSuccessful){
+           return "index";
+       }
+       return "auth-login";
+    }
 
-        return "redirect:/";
+    @GetMapping("logout")
+    public String logoutUser(){
+        userService.logoutUser();
+
+        return "index";
     }
 }

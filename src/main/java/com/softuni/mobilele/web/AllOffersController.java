@@ -4,15 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/brands")
 @Controller
-public class AllBrandController {
+@RequestMapping("/offers")
+public class AllOffersController {
 
     @GetMapping("/all")
-    public String loadAllBrands(){
+    public String allOffers(){
 
-        return "brands";
+        return "offers";
     }
-
-
 }

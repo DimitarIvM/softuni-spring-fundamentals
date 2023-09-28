@@ -28,7 +28,7 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-
+        if(brandRepository.count()==0 && modelRepository.count()==0) {
             Brand brand = new Brand();
             brand.setName("Nissan");
 
@@ -44,6 +44,10 @@ public class DataInitializer implements CommandLineRunner {
 
             brandRepository.save(brand);
             modelRepository.save(model);
+
+        }
+
+
 
 
 

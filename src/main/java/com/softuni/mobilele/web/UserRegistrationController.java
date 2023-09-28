@@ -30,7 +30,7 @@ public class UserRegistrationController {
 
         userService.registerUser(userRegistrationDTO);
 
-        return "redirect:/";
+        return "auth-login";
     }
 
 
